@@ -18,6 +18,12 @@ public class IntToString {
         int s1=Integer.parseInt(input1);//to convert String to int
         System.out.println("Converting String to Int: "+s1);
 
+        System.out.println("------------------------------------------------");
+
+        System.out.println("Enter String input: ");
+        String input2=sc.next();
+        int s2=Integer.parseInt(input2);//to convert String to int
+        System.out.println("Converting String to Int" + s2);
         sc.close();
     }
 }
