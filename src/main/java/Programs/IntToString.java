@@ -25,5 +25,12 @@ public class IntToString {
         int s2=Integer.parseInt(input2);//to convert String to int
         System.out.println("Converting String to Int" + s2);
         sc.close();
+
+        System.out.println("------------------------------------------------");
+
+        System.out.println("Enter Integer input: ");
+        int input3=sc.nextInt();
+        String s3= String.valueOf(input3);//to convert int to String
+        System.out.println("Converting Int to String: "+s3);
     }
 }
