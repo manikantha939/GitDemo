@@ -1,0 +1,159 @@
+two types
+    1. Static
+    2. non static
+
+Static
+    -> static is a keyword, which can be used with a class, variable, method, and blocks
+    -> The class loader loads all the static properties inside a memory location called as class area or static pool
+    -> all the static properties has to accessed with help of className
+    -> static properties can be accessed directly or with the help if className in the same class
+    -> static properties can be accessed only with the help of classname in the different/another class
+        Syntax: ClassName.variableName or ClassName.methodName()
+
+        Note:
+        -> Static properties are loaded only once. therefore they will have a single copy
+        -> all objects will implicitly be pointing to the static pool therefore we can access static properties with
+           object reference but not a good practice
+
+           | Accessing in same class | Accessing in another class | memory location           | number of copies                     |
+Static     | directly or clasName    | ClassName                  | Class Area or Static pool | only one copy per class              |
+Non Static | Object creation         | Object creation            | Heap area                 | depends on number of objects created |
+
+
+==>
+    class student
+    {
+        static int age=10;
+        static void study(){
+            System.out.println("Study");
+        }
+        public static void main(String[]args){
+            System.out.println(Student.age);//10
+            System.out.println(age);//10
+        }
+    }
+
+    when we execute the program, class loader will load all the static property in class area/static pool in the class
+    name for example student
+
+blocks
+    -> blocks are set of instructions/block of code used for initialization
+        -> two types
+            static block
+            non-static block
+
+    static block
+        -> static blocks are set of instructions used to initializing static variables.
+            Syntax:
+                    static
+                    {
+
+                    }
+        -> static blocks always gets executed even before main() or during class loading time
+        -> we can have multiple static blocks and the execution will happen in a sequential manner.
+
+    non-static block(Instance block)
+        -> Non-static blocks are set of instructions used to initializing static variables and non-static variables.
+           Syntax:
+                    {
+
+                    }
+        -> Non-static blocks always gets executed during object creation(Instantiation)
+        -> we can have multiple Non-static blocks and the execution will happen in a sequential manner.
+
+    -> directly we can not print any statement in class
+
+
+
+    JDK(Java Development Kit)
+        -> JDK is the software which contains all the resources in order to develop and execute the java programs
+
+        JRE(Java Runtime Environment) - Development Tools + Libraries
+            -> JRE is a software which provides a platform for executing java programs.
+
+                JIT(Just In Time) compiler - JIT compiler compiles/converts java program(high level) into machine understandable languages.
+                class loader - loads the class form secondary storage to executable area.
+                Interpreter - Interprets the code line by line
+                JVM(Jav Virtual Machine) - JVM is the manager of JRE
+
+                JVM Architecture
+                1. Hep Area - Objects get created here
+                2. Class area or static pool -  All the static members gets scored here
+                3. Stack - Execution happens inside stack
+                4. Method Area - Implementation on methods is stored here
+                5. Native Area
+
+Constructor
+1. Constructor is a set of instructions used for initialization (Assigning) and Instantiation (Object Creation).
+2. Constructor Name and Class Name should always be same.
+3. Constructors will not have return type.
+4. Constructors will get executed at the time of object creation.
+    syntax: AccessSpecifier ClassName(optional arguments)
+        {
+            // Set of Instructions
+        }
+5. Constructors are categorized into 2 types:
+    a. Default Constructor
+    b. Custom/User-Defined Constructor
+
+Default Constructor
+    1. If a constructor is not explicitly present in a class, then the compiler will automatically generate a
+       constructor and those constructors are called as Default Constructor.
+    2. Default constructor neither accepts any arguments nor has any implementation.
+
+Custom/User-Defined Constructor
+1. If a constructor is explicitly defined inside a class by the user or the programmer, then we refer it as
+   custom/user-defined constructor.
+2. They are further categorized into 2 types:
+    i. Non Parameterized Custom Constructor
+    ii. Parameterized Custom Constructor
+
+Global/member variable
+    Global/member variables are those variables which are declared in the class limit/scope
+    they can be access globally ie. through out the class
+    1. static variable
+    2. Non-Static variable
+
+Local variables
+    Local variables are those variables which are declared within a specific scope or limit such as method, constructor, etc..
+    Local variables are accessible within that specific scope
+
+this
+    -> In java, we can have both member/global and local variable name same, then always the local variables will dominate
+       the member variables
+    -> In order to avoid the dominating part we make use os "this" keyword
+    -> this is keyword which is used to pint to the current object/instance
+
+18. Inheritance
+
+19. Constructor overloading
+20. Constructor chaining
+    1. The Process of one constructor calling another constructor is called as constructor chaining.
+    2. Constructor Chaining can be achieved only in case of constructor overloading.
+    3. Constructor Chaining can happen in two ways:
+        a. Constructor Chaining in same class can be achieved using this calling statement ie. this().
+        b. Constructor Chaining in another class can be achieved using super calling statement ie. super() & Is-a
+           relationship.
+    Note:
+    1. this() or super() should always be the first executable line within the constructor.
+    2. Recursive Chaining is not possible, Therefore if there are 'n' constructors we can have a maximum of 'n-1'
+       calling statements.
+
+    1. super() is used to invoke or call constructor of another class.
+        a. IS-A (Inheritance) --> extends
+        b. super() ie. super calling statement.
+
+    super() can be used in 2 ways:
+        i. implicitly
+           When we create an object of a class, and if that class has a super class, and if that super class has
+           a non-parameterized constructor, then the sub class constructor will invoke the super class constructor
+           implicitly.
+        ii. explicitly
+           When we create an object of a class, and if that class has a super class, and if that super class has
+           a parameterized constructor, then the sub class constructor should invoke the super class constructor
+           explicitly, otherwise we get compile time error.
+
+21. Method overriding
+22. Arrays
+23. Packages
+24. Encapsulation

@@ -1,0 +1,13 @@
+Encapsulation is a process of wrapping or binding data members with its relates member functions in a single entity called as class
+
+example: Java Bean Class
+
+1. class should be public non abstract class
+2. class should have public non parameterized constructor
+3. Variable or data members should be declared as private
+4. Those data members should have respective public getter and setter method
+5. class should implement a marker interface called as serializable.
+
+Advantages
+Validation can be done.
+Flexible ie. data can be made either write only or read only.
