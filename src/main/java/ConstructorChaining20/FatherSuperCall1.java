@@ -6,5 +6,6 @@ public class FatherSuperCall1 {
     }
     FatherSuperCall1(){
         System.out.println(1);
+        System.out.println("hello");
     }
 }
